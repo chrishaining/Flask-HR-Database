@@ -18,7 +18,9 @@
                     <td>{{employee.id}}</td>
                     <td>{{employee.last_name}}</td>
                     <td>{{employee.first_name}}</td>
-                    <td>{{employee.departments}}</td>
+                    <td>
+                        {% for employee_department in employee.departments %} {{employee_department.name}} {% endfor %}
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>

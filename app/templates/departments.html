@@ -16,7 +16,10 @@
                 <tr>
                     <td>{{department.id}}</td>
                     <td>{{department.name}}</td>
-                    <td>{{department.employees}}</td>
+
+                    <td>
+                        {% for department_employee in department.employees %} {{department_employee}} {% endfor %}
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
