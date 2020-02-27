@@ -35,3 +35,10 @@ nav a:hover {
     padding: 20px;
     border: solid #080F5B 2px;
 }
+
+
+/* lists */
+
+li {
+    list-style-type: none;
+}
