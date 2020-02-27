@@ -64,6 +64,17 @@ def add_department_to_employee(employee_id, department):
     return redirect('/employees')
 
 
+# function to remove a department from an employee.
+# @app.route('/employees/<int:employee_id>/remove_department', methods=['POST'])
+# def remove_department(employee_id):
+#     department = request.form.get("department") # should this be id? does it need to be an argument?
+#     employee_id = request.form.get("employee_id")
+#     employee = Employee.query.filter_by(id=employee_id).first()
+#     employee.remove(department)
+#     db.session.commit()
+#     return redirect('/employees')
+
+
 # function to delete an employee
 @app.route('/employees/<int:employee_id>/delete', methods=['POST'])
 def delete_employee(employee_id):
@@ -71,6 +82,8 @@ def delete_employee(employee_id):
     db.session.delete(employee_to_delete)
     db.session.commit()
     return redirect('/employees')
+
+
 
 # departments routes
 @app.route('/departments')
