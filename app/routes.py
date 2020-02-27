@@ -21,10 +21,17 @@ def show_employees():
 def add_employee():
     first_name = request.form['first_name']
     last_name = request.form['last_name']
-    department = request.form.get('department')
+    # department = request.form.get('department')
+    # department_id = request.form.get('department_id')
+    # department_id = request.form['department_id']
+    new_department = request.form.get('department')
+
+
     newEmployee = Employee(first_name=first_name, last_name=last_name)
+    # new_department = Department.query.filter_by(id=department_id).first() 
     db.session.add(newEmployee)
-    newEmployee.departments.append(department)
+    db.session.commit()
+    newEmployee.departments.append(new_department)
     db.session.commit()
     return redirect('/employees')
 

@@ -39,12 +39,22 @@ db.session.commit()
 # print(department1)
 # print(department2)
 # print(employee2)
-employee2.departments.append(department2)
+employee1.departments.append(department1)
+employee1.departments.append(department2)
+employee1.departments.append(department3)
+
 db.session.commit()
 # for department in employee2.departments:
 #     print(department)
+
 for department in employee1.departments:
-    print(department)
+    print("{} works in {}".format(employee1, department.name))
+
+employee2.departments.append(department2)
+employee2.departments.append(department3)
+db.session.commit()
+for department in employee2.departments:
+    print("{} works in {}".format(employee2, department.name))
 # print(employee2.departments[1])
 # add an employee to a department
 # employee1.departments.append(department1)
