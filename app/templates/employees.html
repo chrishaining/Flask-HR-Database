@@ -56,8 +56,13 @@
                         </form>
 
                     </td>
+                    <td>
+                        <form action="{{url_for('delete_employee', employee_id=employee.id)}}" method="POST">
 
-
+                            <button type="submit" class="save btn btn-default" value="Delete Employee">Delete
+                                Employee</button>
+                        </form>
+                    </td>
                 </tr>
                 {% endfor %}
 
@@ -76,13 +81,13 @@
 
             <label for="department">Department</label>
             <select id="department">
-                    {% for department in departments %}
-                    <!-- <option value="{{department.id}}" name='department_id' id='department_id'>
+                {% for department in departments %}
+                <!-- <option value="{{department.id}}" name='department_id' id='department_id'>
                         {{department.name}}</option><br> -->
-                    <option value="{{department}}" name="department" id="department">
-                        {{department.name}}</option><br>
-                    {% endfor %}
-                </select>
+                <option value="{{department}}" name="department" id="department">
+                    {{department.name}}</option><br>
+                {% endfor %}
+            </select>
             <br>
             <button type="submit" class="btn btn-primary" value="Add Employee">Add Employee</button>
         </form>

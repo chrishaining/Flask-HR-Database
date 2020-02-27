@@ -25,8 +25,6 @@ def add_employee():
     # department_id = request.form.get('department_id')
     # department_id = request.form['department_id']
     new_department = request.form.get('department')
-
-
     newEmployee = Employee(first_name=first_name, last_name=last_name)
     # new_department = Department.query.filter_by(id=department_id).first() 
     db.session.add(newEmployee)
@@ -65,6 +63,14 @@ def add_department_to_employee(employee_id, department):
     db.session.commit()
     return redirect('/employees')
 
+
+# function to delete an employee
+@app.route('/employees/<int:employee_id>/delete', methods=['POST'])
+def delete_employee(employee_id):
+    employee_to_delete = Employee.query.get(employee_id)
+    db.session.delete(employee_to_delete)
+    db.session.commit()
+    return redirect('/employees')
 
 # departments routes
 @app.route('/departments')
