@@ -12,7 +12,7 @@ The imagined user would be someone working in an HR department who needs to mana
 * For each employee, view all the departments they work for :white_check_mark:
 * Delete employees :heavy_exclamation_mark:
 * Delete departments :heavy_exclamation_mark:
-* Edit employee details ::heavy_exclamation_mark:
+* Edit employee details :heavy_exclamation_mark:
 * Edit department details :heavy_exclamation_mark:
 * Add an employee to a department :heavy_exclamation_mark:
 * Add a department to an employee :heavy_exclamation_mark:
