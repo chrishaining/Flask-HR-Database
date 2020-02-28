@@ -91,6 +91,15 @@ def show_departments():
     departments = Department.query.all()
     return render_template('departments.html', title="Departments", employees=employees, departments=departments)
 
+# add a department
+@app.route('/departments', methods=['POST'])
+def add_department():
+    name = request.form['name']
+    newDepartment = Department(name=name)
+    db.session.add(newDepartment)
+    db.session.commit()
+    return redirect('/departments')
+
 @app.route('/departments/<int:department_id>/update', methods=['POST'])
 def update_department(department_id):
     new_name = request.form.get("new_name")
@@ -99,3 +108,13 @@ def update_department(department_id):
     department.name = new_name
     db.session.commit()
     return redirect('/departments')
+
+
+# function to delete a department
+@app.route('/departments/<int:department_id>/delete', methods=['POST'])
+def delete_department(department_id):
+    department_to_delete = Department.query.get(department_id)
+    db.session.delete(department_to_delete)
+    db.session.commit()
+    return redirect('/departments')
+

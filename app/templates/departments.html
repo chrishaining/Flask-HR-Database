@@ -11,7 +11,7 @@
                 <th>Department Name</th>
                 <th>Employees</th>
                 <th>Edit</th>
-                <th></th>
+                <th>Delete</th>
             </thead>
             <tbody>
                 {% for department in departments %}
@@ -20,7 +20,11 @@
                     <td>{{department.name}}</td>
 
                     <td>
-                        {% for department_employee in department.employees %} {{department_employee}} {% endfor %}
+                        <ul>
+                            {% for department_employee in department.employees %}
+                            <li>{{department_employee.first_name}} {{department_employee.last_name}}</li>
+                            {% endfor %}
+                        </ul>
                     </td>
 
                     <td>
@@ -32,14 +36,29 @@
                         </form>
                     </td>
 
-
-
+                    <td>
+                        <form action="{{url_for('delete_department', department_id=department.id)}}" method="POST">
+                            <button type="submit" class="btn btn-primary" value="Delete Department">Delete
+                                        Department</button>
+                        </form>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
 
+
+
+    <div class="row">
+        <h2>Add a department</h2>
+        <form action="/departments" method="POST">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required />
+            <br>
+            <button type="submit" class="btn btn-primary" value="Add Department">Add Department</button>
+        </form>
+    </div>
 
 </div>
 {% endblock %}
