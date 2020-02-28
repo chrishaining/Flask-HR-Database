@@ -45,23 +45,22 @@ def update_employee(employee_id):
     db.session.commit()
     return redirect('/employees')
 
-# add a department to an employee
-@app.route('/employees/<int:employee_id>/add_department', methods=['GET', 'POST'])
+# add a department to an employee - on hold
+# @app.route('/employees/<int:employee_id>/add_department', methods=['GET', 'POST'])
 # def add_department_to_employee(employee_id, department_id):
-def add_department_to_employee(employee_id, department):
+# def add_department_to_employee(employee_id, department):
 # def add_department_to_employee():
     # departments = Department.query.all()
     # employee_id = request.form.get("employee_id")
-    employee_id = request.form['employee_id']
+    # employee_id = request.form['employee_id']
     # department_id = request.form.get("department_id")
     # department = request.form.get("department")
-    department = request.form["department"]
-
-    employee = Employee.query.filter_by(id=employee_id).first()
+    # department = request.form["department"]
+    # employee = Employee.query.filter_by(id=employee_id).first()
     # department = Department.query.filter_by(id=department_id).first()
-    employee.departments.append(department) 
-    db.session.commit()
-    return redirect('/employees')
+    # employee.departments.append(department) 
+    # db.session.commit()
+    # return redirect('/employees')
 
 
 # function to remove a department from an employee.

@@ -12,7 +12,8 @@
                 <th>First Name</th>
                 <th>Department</th>
                 <th>Edit Button</th>
-                <th>Add a Department</th>
+                <!-- <th>Add a Department</th> -->
+                <th></th>
 
             </thead>
             <tbody>
@@ -36,30 +37,30 @@
                             <button type="submit" class="btn btn-primary" value="Update">Update</button>
                         </form>
                     </td>
-                    <td>
+                    <!-- <td>
                         <form method="POST" action="/employees/{{employee.id}}/add_department">
                             <input type="hidden" value="{{employee.id}}" name="employee_id">
 
-                            <label for="departments">Choose a department:</label><br>
-                            <select id="departments">
+                            <label for="department">Choose a department:</label><br>
+                            <select id="department">
                                 {% for department in departments %}
-                                <!-- <option value="{{department.id}}" name='department_id' id='department_id'>
+                                <option value="{{department.id}}" name='department_id' id='department_id'>
                                     {{department.name}}</option><br> -->
-                                <option value="{{department}}" name="department">
-                                    {{department.name}}</option><br>
-                                {% endfor %}
-                            </select>
+                    <!-- <option value="{{department}}" name="department" id="department">
+                                    {{department.name}}</option><br> -->
+                    <!-- {% endfor %} -->
+                    <!-- </select>
 
                             <button type="submit" class="btn btn-primary" value="add_department_to_employee">Add
                                 department to
                                 employee</button>
                         </form>
 
-                    </td>
+                    </td> -->
                     <td>
                         <form action="{{url_for('delete_employee', employee_id=employee.id)}}" method="POST">
 
-                            <button type="submit" class="save btn btn-default" value="Delete Employee">Delete
+                            <button type="submit" class="btn btn-primary" value="Delete Employee">Delete
                                 Employee</button>
                         </form>
                     </td>
@@ -79,15 +80,15 @@
             <label for="last_name">Last Name</label>
             <input type="text" name="last_name" id="last_name" required />
 
-            <label for="department">Department</label>
+            <!-- <label for="department">Department</label>
             <select id="department">
-                {% for department in departments %}
-                <!-- <option value="{{department.id}}" name='department_id' id='department_id'>
+                {% for department in departments %} -->
+            <!-- <option value="{{department.id}}" name='department_id' id='department_id'>
                         {{department.name}}</option><br> -->
-                <option value="{{department}}" name="department" id="department">
+            <!-- <option value="{{department}}" name="department" id="department">
                     {{department.name}}</option><br>
                 {% endfor %}
-            </select>
+            </select> -->
             <br>
             <button type="submit" class="btn btn-primary" value="Add Employee">Add Employee</button>
         </form>
