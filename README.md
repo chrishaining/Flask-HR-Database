@@ -20,8 +20,8 @@ The imagined user would be someone working in an HR department who needs to mana
 * Delete a department from an employee :heavy_exclamation_mark:
 
 ### Key
-:white_check_mark: success! I have achieved this feature.
-:heavy_exclamation_mark: I have been able to achieve this feature to some extent, but not completely. 
+* :white_check_mark: success! I have achieved this feature.
+* :heavy_exclamation_mark: I have been able to achieve this feature to some extent, but not completely. 
 
 ## Areas I Would Like to Work on in Future
 In the web app the user can edit an employee's/department's name details, but not their connection to the other class. So, you can't edit an employee's departments, and you can't edit a department's employees. However, you can do this if you are directly saving data to the seeds file.
