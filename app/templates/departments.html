@@ -10,6 +10,8 @@
                 <th>Department ID</th>
                 <th>Department Name</th>
                 <th>Employees</th>
+                <th>Edit</th>
+                <th></th>
             </thead>
             <tbody>
                 {% for department in departments %}
@@ -20,6 +22,18 @@
                     <td>
                         {% for department_employee in department.employees %} {{department_employee}} {% endfor %}
                     </td>
+
+                    <td>
+                        <form method="POST" action="/departments/{{department.id}}/update">
+                            <input type="hidden" value="{{department.id}}" name="department_id">
+                            <label for="name">Name</label>
+                            <input type="text" value="{{department.name}}" name="new_name" size="55"><br>
+                            <button type="submit" class="btn btn-primary" value="Update">Update</button>
+                        </form>
+                    </td>
+
+
+
                 </tr>
                 {% endfor %}
             </tbody>

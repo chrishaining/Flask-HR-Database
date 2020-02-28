@@ -90,3 +90,12 @@ def show_departments():
     employees = Employee.query.all()
     departments = Department.query.all()
     return render_template('departments.html', title="Departments", employees=employees, departments=departments)
+
+@app.route('/departments/<int:department_id>/update', methods=['POST'])
+def update_department(department_id):
+    new_name = request.form.get("new_name")
+    department_id = request.form.get("department_id")
+    department = Department.query.filter_by(id=department_id).first()
+    department.name = new_name
+    db.session.commit()
+    return redirect('/departments')
